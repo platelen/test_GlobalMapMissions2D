@@ -34,5 +34,13 @@ namespace Missions
         }
 
         public string MissionNumber => _missionNumber;
+
+        public string MissionName => _missionName;
+
+        public Image ImageMission => _imageMission;
+
+        public string MissionText => _missionText;
+
+        public string MissionCompletedText => _missionCompletedText;
     }
 }

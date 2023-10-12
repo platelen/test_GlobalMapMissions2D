@@ -1,4 +1,5 @@
 using Events;
+using PanelsMission;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ namespace Missions
     {
         [SerializeField] private Mission _mission;
         [SerializeField] private TextMeshProUGUI _textNumberMission;
+        [SerializeField] private PanelDescriptionMission _panelDescriptionMission;
 
         private Button _buttonClick;
 
@@ -25,12 +27,18 @@ namespace Missions
 
         private void OnEnable()
         {
-            _buttonClick.onClick.AddListener(GlobalEvents.SendStartClickOnMission);
+            _buttonClick.onClick.AddListener(OpenDescriptionPanel);
         }
 
         private void OnDisable()
         {
-            _buttonClick.onClick.RemoveListener(GlobalEvents.SendStartClickOnMission);
+            _buttonClick.onClick.RemoveListener(OpenDescriptionPanel);
+        }
+
+        private void OpenDescriptionPanel()
+        {
+            _panelDescriptionMission.SetMission(_mission);
+            GlobalEvents.SendStartClickOnMission();
         }
     }
 }
