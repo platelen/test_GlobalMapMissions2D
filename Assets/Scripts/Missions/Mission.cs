@@ -42,5 +42,11 @@ namespace Missions
         public string MissionText => _missionText;
 
         public string MissionCompletedText => _missionCompletedText;
+
+        public MissionState MissionStateValue
+        {
+            get => _missionState;
+            set => _missionState = value;
+        }
     }
 }
