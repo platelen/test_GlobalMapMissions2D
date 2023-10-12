@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Missions
 {
     [CreateAssetMenu(fileName = "Mission_", menuName = "Create Missions/Mission")]
     public class Mission : ScriptableObject
     {
+        [SerializeField] private Image _imageMission;
         [SerializeField] private string _missionNumber;
         [SerializeField] private string _missionName;
         [SerializeField] private string _missionText;
