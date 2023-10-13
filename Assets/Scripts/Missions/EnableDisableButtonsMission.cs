@@ -5,26 +5,41 @@ namespace Missions
 {
     public class EnableDisableButtonsMission : MonoBehaviour
     {
-        private float _alphaValue = 0.5f;
+        private float _alphaValueLocked = 0.5f;
+        private float _alphaValueActived = 1f;
         private Image _imageButton;
         private Button _buttonMission;
+        private MissionUI _missionUI;
 
         private void Awake()
         {
             _imageButton = GetComponent<Image>();
             _buttonMission = GetComponent<Button>();
+            _missionUI = GetComponent<MissionUI>();
         }
 
-        private void Start()
+        private void Update()
         {
-            ChangeAlpha();
+            ChangeStateButtons();
         }
 
-        private void ChangeAlpha()
+        private void ChangeStateButtons()
         {
-            var newColor = _imageButton.color;
-            newColor.a = _alphaValue;
-            _imageButton.color = newColor;
+            if (_missionUI.Mission.MissionStateValue == Mission.MissionState.Locked ||
+                _missionUI.Mission.MissionStateValue == Mission.MissionState.Completed)
+            {
+                var newColor = _imageButton.color;
+                newColor.a = _alphaValueLocked;
+                _imageButton.color = newColor;
+                _buttonMission.enabled = false;
+            }
+            else if (_missionUI.Mission.MissionStateValue == Mission.MissionState.Active)
+            {
+                var newColorActive = _imageButton.color;
+                newColorActive.a = _alphaValueActived;
+                _imageButton.color = newColorActive;
+                _buttonMission.enabled = true;
+            }
         }
     }
 }

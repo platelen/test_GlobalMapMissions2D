@@ -15,6 +15,8 @@ namespace Missions
 
         private Button _buttonClick;
 
+        public Mission Mission => _mission;
+
         private void Awake()
         {
             _buttonClick = GetComponent<Button>();
