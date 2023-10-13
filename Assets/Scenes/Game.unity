@@ -385,6 +385,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 0b030f73bf24fa74a95e8545941f004e, type: 2}
   _textNumberMission: {fileID: 1757658751}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &510378841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +550,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: bf82fe48c8ee2c845b316353a05dc066, type: 2}
   _textNumberMission: {fileID: 822388875}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &640294558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +574,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &803892411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2001661645534136228, guid: aca6492233280884ea6966907e3785aa, type: 3}
+  m_PrefabInstance: {fileID: 5923082543864078155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &803892416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803892411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1544a600617f4d8b90ee2c638365ddf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panelCompletedMission: {fileID: 5923082543864078156}
 --- !u!114 &822388875 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6824326710904239158, guid: 4614d70812c20de4f9656e504ba98387, type: 3}
@@ -614,6 +634,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 6b4026038bf010844b773bd61d056054, type: 2}
   _textNumberMission: {fileID: 139167236}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &913582526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +917,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5db7be2a2ba58db43839922cb14edb81, type: 2}
   - {fileID: 11400000, guid: 8359b7027c12cc84aaff1ad9deba9724, type: 2}
   - {fileID: 11400000, guid: c96ea767d914a724c99bbeda596eae42, type: 2}
+  _panelCompletedMission: {fileID: 5923082543864078156}
+  _panelDescriptionMission: {fileID: 4051183821199831695}
 --- !u!1001 &1234787008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1026,6 +1049,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 2e8121060a3b0fb428213567427bde24, type: 2}
   _textNumberMission: {fileID: 532508255}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!1 &1646118723 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1751431615308830134, guid: 4614d70812c20de4f9656e504ba98387, type: 3}
@@ -1046,6 +1070,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 8359b7027c12cc84aaff1ad9deba9724, type: 2}
   _textNumberMission: {fileID: 639029365}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &1646118733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,6 +1114,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 61226df0b9be27d449b6a7984a3f2bb6, type: 2}
   _textNumberMission: {fileID: 921337188}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &1705728434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,6 +1147,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: c96ea767d914a724c99bbeda596eae42, type: 2}
   _textNumberMission: {fileID: 367545102}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &1722031166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,6 +1191,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 10ffd4c759fe83a4cba9df34c89cf505, type: 2}
   _textNumberMission: {fileID: 782740060}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &1786254659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1316,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: d35808c7e08baee4292210a961676900, type: 2}
   _textNumberMission: {fileID: 1677491270}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &1876396209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,6 +1461,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 5db7be2a2ba58db43839922cb14edb81, type: 2}
   _textNumberMission: {fileID: 897204265}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &1945747210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1464,6 +1494,7 @@ MonoBehaviour:
   _mission: {fileID: 11400000, guid: 8d2e2712fb868dd4abd16233ef63b4d4, type: 2}
   _textNumberMission: {fileID: 1129215584}
   _panelDescriptionMission: {fileID: 4051183821199831699}
+  _panelCompletedMission: {fileID: 5923082543864078160}
 --- !u!114 &2090271120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,6 +1524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518e6ed5ac084cffa22e1a131fec584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _panelDescriptionMission: {fileID: 0}
 --- !u!224 &1232796599699803228 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3182177160612451341, guid: aca6492233280884ea6966907e3785aa, type: 3}
@@ -2215,6 +2247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4271049331283369732, guid: aca6492233280884ea6966907e3785aa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5923082543864078160}
+    - targetCorrespondingSourceObject: {fileID: 2001661645534136228, guid: aca6492233280884ea6966907e3785aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 803892416}
   m_SourcePrefab: {fileID: 100100000, guid: aca6492233280884ea6966907e3785aa, type: 3}
 --- !u!1 &5923082543864078156 stripped
 GameObject:

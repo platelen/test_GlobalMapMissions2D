@@ -11,6 +11,7 @@ namespace Missions
         [SerializeField] private Mission _mission;
         [SerializeField] private TextMeshProUGUI _textNumberMission;
         [SerializeField] private PanelDescriptionMission _panelDescriptionMission;
+        [SerializeField] private PanelCompletedMission _panelCompletedMission;
 
         private Button _buttonClick;
 
@@ -27,17 +28,26 @@ namespace Missions
         private void OnEnable()
         {
             _buttonClick.onClick.AddListener(OpenDescriptionPanel);
+            _buttonClick.onClick.AddListener(SetInfoCompletedPanel);
         }
 
         private void OnDisable()
         {
             _buttonClick.onClick.RemoveListener(OpenDescriptionPanel);
+            _buttonClick.onClick.RemoveListener(SetInfoCompletedPanel);
         }
 
         private void OpenDescriptionPanel()
         {
             _panelDescriptionMission.SetMission(_mission);
+            MissionManager.Instance.SetSelectedMission(_mission);
             GlobalEvents.SendStartClickOnMission();
+        }
+
+        private void SetInfoCompletedPanel()
+        {
+            _panelCompletedMission.SetMission(_mission);
+            MissionManager.Instance.SetSelectedMission(_mission);
         }
     }
 }

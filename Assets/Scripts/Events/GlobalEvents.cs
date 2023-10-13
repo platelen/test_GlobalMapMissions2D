@@ -7,6 +7,7 @@ namespace Events
     public class GlobalEvents : MonoBehaviour
     {
         public static readonly UnityEvent OnStartClickOnMission = new UnityEvent();
+        public static readonly UnityEvent OnStartStartedMission = new UnityEvent();
         public static readonly UnityEvent OnStartEnableCompletedMission = new UnityEvent();
         public static readonly UnityEvent OnStartDisablePanelDescription = new UnityEvent();
         public static readonly UnityEvent OnStartDisablePanelCompletedMission = new UnityEvent();
@@ -15,6 +16,11 @@ namespace Events
         public static void SendStartClickOnMission()
         {
             OnStartClickOnMission.Invoke();
+        }
+
+        public static void SendStartStartedMission()
+        {
+            OnStartStartedMission.Invoke();
         }
 
         public static void SendStartEnableCompletedMission()

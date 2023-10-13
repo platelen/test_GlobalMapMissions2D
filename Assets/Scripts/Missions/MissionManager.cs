@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,10 @@ namespace Missions
     public class MissionManager : MonoBehaviour
     {
         [SerializeField] private List<Mission> missions;
+        [SerializeField] private GameObject _panelCompletedMission;
+        [SerializeField] private GameObject _panelDescriptionMission;
 
+        public static Mission SelectedMission { get; private set; }
         public static MissionManager Instance { get; private set; }
 
         private void Awake()
@@ -28,7 +32,6 @@ namespace Missions
 
         private void InitializeMissions()
         {
-            // Установите начальное состояние для миссий.
             bool foundActiveMission = false;
 
             foreach (Mission mission in missions)
@@ -45,24 +48,28 @@ namespace Missions
             }
         }
 
+        private IEnumerator StartTimerToOpenPanelCompletedMission()
+        {
+            _panelDescriptionMission.SetActive(false);
+            yield return new WaitForSeconds(2f);
+            _panelCompletedMission.SetActive(true);
+        }
+
         public void StartMission(Mission mission)
         {
-            // Запустите миссию и установите состояние в TemporarilyLocked.
             mission.MissionStateValue = Mission.MissionState.TemporarilyLocked;
+            StartCoroutine(StartTimerToOpenPanelCompletedMission());
         }
 
         public void CompleteMission(Mission mission)
         {
-            // Завершите миссию и установите состояние в Completed.
             mission.MissionStateValue = Mission.MissionState.Completed;
 
-            // Здесь вы можете также проверить зависимости и разблокировать следующие миссии.
             UnlockNextMissions();
         }
 
         private void UnlockNextMissions()
         {
-            // Разблокируйте следующие миссии после успешного завершения миссии.
             bool foundActiveMission = false;
 
             foreach (Mission mission in missions)
@@ -73,6 +80,11 @@ namespace Missions
                     foundActiveMission = true;
                 }
             }
+        }
+
+        public void SetSelectedMission(Mission mission)
+        {
+            SelectedMission = mission;
         }
     }
 }
