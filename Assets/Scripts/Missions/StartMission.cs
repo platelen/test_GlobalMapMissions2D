@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Heroes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +8,7 @@ namespace Missions
     public class StartMission : MonoBehaviour
     {
         [SerializeField] private GameObject _panelDescriptionMission;
+        [SerializeField] private List<Hero> _heroes;
 
         private Button _buttonStartMission;
 
@@ -21,7 +24,15 @@ namespace Missions
 
             if (selectedMission != null)
             {
-                MissionManager.Instance.StartMission(selectedMission); // Запускаем выбранную миссию
+                foreach (Hero heroes in _heroes)
+                {
+                    if (heroes.IsChange)
+                    {
+                        MissionManager.Instance.StartMission(selectedMission);
+                        heroes.IsChange = false;  // Запускаем выбранную миссию
+                    }
+                }
+                //MissionManager.Instance.StartMission(selectedMission); // Запускаем выбранную миссию
             }
         }
     }
