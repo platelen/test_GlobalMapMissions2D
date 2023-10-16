@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Missions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +10,9 @@ namespace Heroes
     {
         [SerializeField] private Hero _hero;
         [SerializeField] private TextMeshProUGUI _nameHeroText;
+        [SerializeField] private GameObject _imageHeroChange;
 
+        private List<Hero> _selectedHeroes;
         private Button _buttonHero;
 
         private void Awake()
@@ -34,7 +38,17 @@ namespace Heroes
 
         private void ChangeHero()
         {
-            _hero.IsChange = true;
+            _hero.IsChange = !_hero.IsChange;
+            // if (_hero.IsChange)
+            // {
+            //     _imageHeroChange.SetActive(true);
+            // }
+            // else
+            // {
+            //     _imageHeroChange.SetActive(false);
+            // }
+
+            MissionManager.Instance.UpdateSelectedHeroes(_hero, _hero.IsChange);
         }
     }
 }

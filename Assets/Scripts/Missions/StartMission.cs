@@ -29,10 +29,9 @@ namespace Missions
                     if (heroes.IsChange)
                     {
                         MissionManager.Instance.StartMission(selectedMission);
-                        heroes.IsChange = false;  // Запускаем выбранную миссию
+                        heroes.IsChange = false; // Запускаем выбранную миссию
                     }
                 }
-                //MissionManager.Instance.StartMission(selectedMission); // Запускаем выбранную миссию
             }
         }
     }
