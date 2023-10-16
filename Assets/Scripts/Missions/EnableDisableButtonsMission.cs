@@ -10,6 +10,7 @@ namespace Missions
         private Image _imageButton;
         private Button _buttonMission;
         private MissionUI _missionUI;
+        private Color _colorCompletedMission = Color.green;
 
         private void Awake()
         {
@@ -25,12 +26,19 @@ namespace Missions
 
         private void ChangeStateButtons()
         {
-            if (_missionUI.Mission.MissionStateValue == Mission.MissionState.Locked ||
-                _missionUI.Mission.MissionStateValue == Mission.MissionState.Completed)
+            if (_missionUI.Mission.MissionStateValue == Mission.MissionState.Locked)
             {
                 var newColor = _imageButton.color;
                 newColor.a = _alphaValueLocked;
                 _imageButton.color = newColor;
+                _buttonMission.enabled = false;
+            }
+            else if (_missionUI.Mission.MissionStateValue == Mission.MissionState.Completed)
+            {
+                var newColor = _imageButton.color;
+                newColor.a = _alphaValueLocked;
+                _imageButton.color = newColor;
+                _imageButton.color = _colorCompletedMission;
                 _buttonMission.enabled = false;
             }
             else if (_missionUI.Mission.MissionStateValue == Mission.MissionState.Active)

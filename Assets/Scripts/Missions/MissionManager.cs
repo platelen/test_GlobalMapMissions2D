@@ -70,14 +70,12 @@ namespace Missions
 
         private void UnlockNextMissions()
         {
-            bool foundActiveMission = false;
-
             foreach (Mission mission in missions)
             {
-                if (foundActiveMission)
+                if (mission.MissionStateValue == Mission.MissionState.Locked)
                 {
                     mission.MissionStateValue = Mission.MissionState.Active;
-                    foundActiveMission = true;
+                    break;
                 }
             }
         }
