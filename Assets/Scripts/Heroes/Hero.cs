@@ -6,7 +6,8 @@ namespace Heroes
     public class Hero : ScriptableObject
     {
         [SerializeField] private string _nameHero;
-        
+        [SerializeField] private int _statsHero;
+
         private bool _isChange;
 
         public string NameHero => _nameHero;
@@ -15,6 +16,17 @@ namespace Heroes
         {
             get => _isChange;
             set => _isChange = value;
+        }
+
+        public int StatsHero
+        {
+            get => _statsHero;
+            set => _statsHero = value;
+        }
+
+        public void IncreaseMissionStats(int stats)
+        {
+            _statsHero += stats;
         }
     }
 }

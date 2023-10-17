@@ -9,6 +9,7 @@ namespace Missions
 
         private Button _buttonCompletedMission;
 
+
         private void Awake()
         {
             _buttonCompletedMission = GetComponent<Button>();

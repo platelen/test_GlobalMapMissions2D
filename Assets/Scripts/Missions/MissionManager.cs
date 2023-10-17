@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Heroes;
+using TMPro;
 using UnityEngine;
 
 namespace Missions
@@ -10,6 +12,7 @@ namespace Missions
         [SerializeField] private List<Mission> missions;
         [SerializeField] private GameObject _panelCompletedMission;
         [SerializeField] private GameObject _panelDescriptionMission;
+        [SerializeField] private TextMeshProUGUI _rewardText;
 
         private List<Hero> _selectedHeroes = new List<Hero>();
 
@@ -55,6 +58,13 @@ namespace Missions
         {
             _panelDescriptionMission.SetActive(false);
             yield return new WaitForSeconds(2f);
+            Mission selectedMission = SelectedMission;
+
+            if (selectedMission != null)
+            {
+                InfoRewardMission(selectedMission);
+            }
+
             _panelCompletedMission.SetActive(true);
         }
 
@@ -72,22 +82,33 @@ namespace Missions
             }
         }
 
+        private void InfoRewardMission(Mission mission)
+        {
+            _rewardText.text = $"Награда: \nОчки для героев: " + mission.StatsAfterCompletedMission;
+        }
+
         public void StartMission(Mission mission)
         {
             //TODO: можно делать логику с учётом того, какие герои были выбраны.
 
             mission.MissionStateValue = Mission.MissionState.TemporarilyLocked;
             StartCoroutine(StartTimerToOpenPanelCompletedMission());
-
-            _selectedHeroes.Clear();
         }
 
         public void CompleteMission(Mission mission)
         {
             mission.MissionStateValue = Mission.MissionState.Completed;
 
+            foreach (Hero hero in _selectedHeroes)
+            {
+                int missionStats = mission.StatsAfterCompletedMission;
+                hero.IncreaseMissionStats(missionStats);
+            }
+
             UnlockNextMissions();
+            _selectedHeroes.Clear();
         }
+
 
         private void UnlockNextMissions()
         {

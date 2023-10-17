@@ -12,8 +12,8 @@ namespace Missions
         [SerializeField] private string _missionName;
         [SerializeField] private string _missionText;
         [SerializeField] private string _missionCompletedText;
+        [SerializeField] private int _statsAfterCompletedMission;
         [SerializeField] private MissionState _missionState;
-        [SerializeField] private List<Mission> _prerequisites;
         [SerializeField] private Faction _playerSide;
         [SerializeField] private Faction _enemySide;
         [SerializeField] private Vector2 _screenCoordinates;
@@ -48,5 +48,7 @@ namespace Missions
             get => _missionState;
             set => _missionState = value;
         }
+
+        public int StatsAfterCompletedMission => _statsAfterCompletedMission;
     }
 }

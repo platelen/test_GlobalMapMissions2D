@@ -17,8 +17,8 @@ MonoBehaviour:
   _missionName: 
   _missionText: 
   _missionCompletedText: 
-  _missionState: 0
-  _prerequisites: []
+  _statsAfterCompletedMission: 4
+  _missionState: 1
   _playerSide: 0
   _enemySide: 0
   _screenCoordinates: {x: 0, y: 0}

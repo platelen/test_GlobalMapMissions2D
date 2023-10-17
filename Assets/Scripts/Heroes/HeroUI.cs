@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Missions;
 using TMPro;
@@ -10,6 +11,7 @@ namespace Heroes
     {
         [SerializeField] private Hero _hero;
         [SerializeField] private TextMeshProUGUI _nameHeroText;
+        [SerializeField] private TextMeshProUGUI _statsHeroText;
         [SerializeField] private GameObject _imageHeroChange;
 
         private List<Hero> _selectedHeroes;
@@ -24,6 +26,11 @@ namespace Heroes
         private void Start()
         {
             _nameHeroText.text = _hero.NameHero;
+        }
+
+        private void Update()
+        {
+            _statsHeroText.text = "Stats: " + _hero.StatsHero;
         }
 
         private void OnEnable()
