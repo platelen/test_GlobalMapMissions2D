@@ -13,8 +13,12 @@ namespace Missions
         [SerializeField] private GameObject _panelCompletedMission;
         [SerializeField] private GameObject _panelDescriptionMission;
         [SerializeField] private TextMeshProUGUI _rewardText;
+        [SerializeField] private TextMeshProUGUI _windowHero;
+        [SerializeField] private TextMeshProUGUI _nameHero;
 
         private List<Hero> _selectedHeroes = new List<Hero>();
+        private string _enterHeroText = "Выбран герой:";
+        private string _deleteHeroText = "Удалён герой:";
 
         public static Mission SelectedMission { get; private set; }
         public static MissionManager Instance { get; private set; }
@@ -72,12 +76,14 @@ namespace Missions
         {
             if (isSelected)
             {
-                Debug.Log($"Выбран {hero.NameHero}");
+                _windowHero.text = _enterHeroText;
+                _nameHero.text = hero.NameHero;
                 _selectedHeroes.Add(hero);
             }
             else
             {
-                Debug.Log($"Удалён {hero.NameHero}");
+                _windowHero.text = _deleteHeroText;
+                _nameHero.text = hero.NameHero;
                 _selectedHeroes.Remove(hero);
             }
         }

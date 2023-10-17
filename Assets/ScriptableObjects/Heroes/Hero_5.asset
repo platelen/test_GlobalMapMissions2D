@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Hero_5
   m_EditorClassIdentifier: 
   _nameHero: "\u0418 \u0442\u043E\u0436\u0435 \u0412\u0430\u0441\u044F"
-  _indexHero: 5
+  _statsHero: 0
