@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ namespace Missions
     public class CompletedMission : MonoBehaviour
     {
         [SerializeField] private GameObject _panelCompletedMission;
+        [SerializeField] private List<GameObject> _buttonsHero;
 
         private Button _buttonCompletedMission;
 
@@ -26,7 +28,20 @@ namespace Missions
             }
 
             _panelCompletedMission.SetActive(false);
+            EnabledButtonHero();
             StopAllCoroutines();
+        }
+
+        private void EnabledButtonHero()
+        {
+            Mission selectedMission = MissionManager.SelectedMission;
+            foreach (var button in _buttonsHero)
+            {
+                if (selectedMission.NameHeroReward == button.name)
+                {
+                    button.transform.GetChild(0).gameObject.SetActive(true);
+                }
+            }
         }
     }
 }

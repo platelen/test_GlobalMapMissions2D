@@ -145,6 +145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &341769442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1150244276483280485, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
+  m_PrefabInstance: {fileID: 2245810334927482396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &367545102 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 475425409368256176, guid: 4614d70812c20de4f9656e504ba98387, type: 3}
@@ -156,6 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &417876909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4092267034299119624, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
+  m_PrefabInstance: {fileID: 2245810334927482396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &493009971 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7195966528582663383, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
@@ -222,6 +232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &552472485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 786295791503325185, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
+  m_PrefabInstance: {fileID: 2245810334927482396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &639029365 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5152144479338031254, guid: 4614d70812c20de4f9656e504ba98387, type: 3}
@@ -306,6 +321,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelCompletedMission: {fileID: 5923082543864078156}
+  _buttonsHero:
+  - {fileID: 1819784333296461925}
+  - {fileID: 417876909}
+  - {fileID: 1234787011}
+  - {fileID: 552472485}
+  - {fileID: 341769442}
 --- !u!114 &822388875 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6824326710904239158, guid: 4614d70812c20de4f9656e504ba98387, type: 3}
@@ -657,6 +678,11 @@ MonoBehaviour:
   _panelCompletedMission: {fileID: 5923082543864078156}
   _panelDescriptionMission: {fileID: 4051183821199831695}
   _rewardText: {fileID: 789915066}
+--- !u!1 &1234787011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4734379864005271486, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
+  m_PrefabInstance: {fileID: 2245810334927482396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1594664798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5537473002204566742, guid: 4614d70812c20de4f9656e504ba98387, type: 3}
@@ -1074,6 +1100,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3182177160612451341, guid: aca6492233280884ea6966907e3785aa, type: 3}
   m_PrefabInstance: {fileID: 5923082543864078155}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1819784333296461925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5338187521280713365, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
+  m_PrefabInstance: {fileID: 2245810334927482396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2245810334927482396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1166,6 +1197,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2509109254984650954, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2646586437223021018, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1213,6 +1248,10 @@ PrefabInstance:
     - target: {fileID: 3394720659373065457, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092267034299119624, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
+      propertyPath: m_Name
+      value: Button_Gull
       objectReference: {fileID: 0}
     - target: {fileID: 5172267529372500936, guid: 8985f200bb7b50c439c553eb580455ee, type: 3}
       propertyPath: _statsHeroText

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +12,7 @@ namespace Missions
         [SerializeField] private string _missionText;
         [SerializeField] private string _missionCompletedText;
         [SerializeField] private int _statsAfterCompletedMission;
+        [SerializeField] private string _nameHeroReward;
         [SerializeField] private MissionState _missionState;
         [SerializeField] private Faction _playerSide;
         [SerializeField] private Faction _enemySide;
@@ -50,5 +50,11 @@ namespace Missions
         }
 
         public int StatsAfterCompletedMission => _statsAfterCompletedMission;
+
+        public string NameHeroReward
+        {
+            get => _nameHeroReward;
+            set => _nameHeroReward = value;
+        }
     }
 }
