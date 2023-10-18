@@ -9,6 +9,7 @@ namespace PanelsMission
     {
         [SerializeField] private TextMeshProUGUI _missionNameText, _missionText;
         [SerializeField] private Image _imageMission;
+        [SerializeField] private TextMeshProUGUI _coordinatesText;
 
         private Mission _currentMission;
 
@@ -26,6 +27,11 @@ namespace PanelsMission
                 _missionText.text = _currentMission.MissionText;
                 //_imageMission.sprite = _currentMission.ImageMission.sprite;
             }
+        }
+
+        public void SetCoordinates(Vector2 coordinates)
+        {
+            _coordinatesText.text = $"Координаты: ({coordinates.x}, {coordinates.y})";
         }
     }
 }
