@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Heroes;
 using TMPro;
 using UnityEngine;
@@ -13,12 +13,9 @@ namespace Missions
         [SerializeField] private GameObject _panelCompletedMission;
         [SerializeField] private GameObject _panelDescriptionMission;
         [SerializeField] private TextMeshProUGUI _rewardText;
-        [SerializeField] private TextMeshProUGUI _windowHero;
-        [SerializeField] private TextMeshProUGUI _nameHero;
+        [SerializeField] private TextMeshProUGUI _allHeroChange;
 
         private List<Hero> _selectedHeroes = new List<Hero>();
-        private string _enterHeroText = "Выбран герой:";
-        private string _deleteHeroText = "Удалён герой:";
 
         public static Mission SelectedMission { get; private set; }
         public static MissionManager Instance { get; private set; }
@@ -39,6 +36,7 @@ namespace Missions
         {
             InitializeMissions();
         }
+
 
         private void InitializeMissions()
         {
@@ -76,16 +74,20 @@ namespace Missions
         {
             if (isSelected)
             {
-                _windowHero.text = _enterHeroText;
-                _nameHero.text = hero.NameHero;
                 _selectedHeroes.Add(hero);
             }
             else
             {
-                _windowHero.text = _deleteHeroText;
-                _nameHero.text = hero.NameHero;
                 _selectedHeroes.Remove(hero);
             }
+
+            UpdateHeroListText();
+        }
+
+        private void UpdateHeroListText()
+        {
+            string selectedHeroNames = string.Join(", ", _selectedHeroes.Select(hero => hero.NameHero));
+            _allHeroChange.text = selectedHeroNames;
         }
 
         private void InfoRewardMission(Mission mission)
@@ -113,6 +115,7 @@ namespace Missions
 
             UnlockNextMissions();
             _selectedHeroes.Clear();
+            _allHeroChange.text = _selectedHeroes.ToString();
         }
 
 
