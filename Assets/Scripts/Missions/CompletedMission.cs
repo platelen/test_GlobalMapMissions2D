@@ -37,7 +37,7 @@ namespace Missions
             Mission selectedMission = MissionManager.SelectedMission;
             foreach (var button in _buttonsHero)
             {
-                if (selectedMission.NameHeroReward == button.name)
+                if (selectedMission.NameHeroReward == button.transform.GetChild(1).name)
                 {
                     button.transform.GetChild(0).gameObject.SetActive(true);
                 }

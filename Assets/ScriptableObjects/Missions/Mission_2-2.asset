@@ -18,7 +18,7 @@ MonoBehaviour:
   _missionText: 
   _missionCompletedText: 
   _statsAfterCompletedMission: 1
-  _nameHeroReward: Button_Gull
+  _nameHeroReward: "\u0412\u043E\u0440\u043E\u043D"
   _missionState: 1
   _playerSide: 0
   _enemySide: 0

@@ -86,13 +86,21 @@ namespace Missions
 
         private void UpdateHeroListText()
         {
-            string selectedHeroNames = string.Join(", ", _selectedHeroes.Select(hero => hero.NameHero));
-            _allHeroChange.text = selectedHeroNames;
+            if (_selectedHeroes.Count == 0)
+            {
+                _allHeroChange.text = string.Empty;
+            }
+            else
+            {
+                string selectedHeroNames = string.Join(", ", _selectedHeroes.Select(hero => hero.NameHero));
+                _allHeroChange.text = selectedHeroNames;
+            }
         }
 
         private void InfoRewardMission(Mission mission)
         {
-            _rewardText.text = $"Награда: \nОчки для героев: " + mission.StatsAfterCompletedMission;
+            _rewardText.text =
+                $"Награда: \nОчки для героев: {mission.StatsAfterCompletedMission} \n Герой: {mission.NameHeroReward} ";
         }
 
         public void StartMission(Mission mission)
@@ -115,7 +123,7 @@ namespace Missions
 
             UnlockNextMissions();
             _selectedHeroes.Clear();
-            _allHeroChange.text = _selectedHeroes.ToString();
+            _allHeroChange.text = string.Empty;
         }
 
 
